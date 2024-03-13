@@ -45,6 +45,12 @@ public class ApiClass {
         userDb.put(dbKey,userObj);
         return "User has been added to the DB";
     }
+
+    @GetMapping("/getUser/{userId}")
+    public User getUser(@PathVariable("userId") Integer userId){
+        User user = userDb.get(userId);
+        return user;
+    }
 }
 /*
  4 Types of API:
